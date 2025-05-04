@@ -2,8 +2,6 @@ package cmd
 
 import (
 	"fmt"
-	"io"
-	"net"
 	"os"
 	"os/exec"
 	"time"
