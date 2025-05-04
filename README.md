@@ -1,73 +1,81 @@
 # SSH Manager CLI
 
-Este é um gerenciador de conexões SSH via linha de comando. Ele permite adicionar, editar, excluir e listar conexões SSH, além de definir uma senha global que pode ser usada para conexões sem senha.
+This is an SSH connection manager via command line. It allows you to add, edit, delete, and list SSH connections, as well as set a global password that can be used for connections without a password.
 
-## 📦 Instalação
+## 📦 Installation
 
-Para rodar o projeto, você precisa ter o [Go](https://golang.org/) instalado em sua máquina.
-
-### Passos
-
-1. Clone o repositório:
+### Download via git
 
 ```bash
-git clone https://github.com/seuusuario/ssh-manager.git
+go install github.com/andreixhz/sshm@latest
+```
+
+### Using the repository
+
+To run the project, you need to have [Go](https://golang.org/) installed on your machine.
+
+### Steps
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/andreixhz/sshm.git
 cd ssh-manager
 go mod tidy
 ```
 
-## 🚀 Comandos
+## 🚀 Commands
 
-### `add` - Adicionar uma nova conexão SSH
+### `add` - Add a new SSH connection
 
 ```bash
 sshm add --alias <alias> --host <host> --user <user> --port <port> --tags <tags> --group <group> --password <password>
 ```
 
-Parâmetros:
-- `--alias`: Nome da conexão
-- `--host`: IP ou domínio do servidor SSH
-- `--user`: Usuário SSH
-- `--port`: Porta do servidor SSH
-- `--tags`: Tags associadas à conexão
-- `--group`: Grupo ao qual a conexão pertence
-- `--password`: Senha da conexão
+Parameters:
+- `--alias`: Connection name
+- `--host`: Server IP or domain
+- `--user`: SSH user
+- `--port`: SSH server port
+- `--tags`: Tags associated with the connection
+- `--group`: Group to which the connection belongs
+- `--password`: Connection password
 
-### `edit` - Editar uma conexão SSH existente
+### `edit` - Edit an existing SSH connection
 
 ```bash
 sshm edit --alias <alias> [--host <host>] [--user <user>] [--port <port>] [--tags <tags>] [--group <group>] [--password <password>]
 ```
 
-Parâmetros:
-- `--alias`: Nome da conexão
-- `--host`, `--user`, `--port`, `--tags`, `--group`, `--password`: Campos opcionais para atualização
+Parameters:
+- `--alias`: Connection name
+- `--host`, `--user`, `--port`, `--tags`, `--group`, `--password`: Optional fields to update
 
-### `delete` - Excluir uma conexão SSH
+### `delete` - Delete an SSH connection
 
 ```bash
 sshm delete --alias <alias>
 ```
 
-Parâmetros:
-- `--alias`: Nome da conexão a ser excluída
+Parameters:
+- `--alias`: Name of the connection to be deleted
 
-### `set-password` - Definir senha global
+### `set-password` - Set global password
 
 ```bash
 sshm set-password
 ```
 
-Define uma senha global para conexões SSH que não possuem senha própria.
+Sets a global password for SSH connections that don't have their own password.
 
-### `list` - Listar todas as conexões SSH
+### `list` - List all SSH connections
 
 ```bash
 sshm list
 ```
 
-Exibe todas as conexões SSH cadastradas no sistema.
+Displays all SSH connections registered in the system.
 
-## 📄 Licença
+## 📄 License
 
-Este projeto está licenciado sob a licença MIT.
+This project is licensed under the MIT license.
