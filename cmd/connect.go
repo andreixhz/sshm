@@ -42,8 +42,7 @@ var connectCmd = &cobra.Command{
 				config := &ssh.ClientConfig{
 					User: h.User,
 					Auth: []ssh.AuthMethod{
-						ssh.Password(h.Password),
-						ssh.PublicKeysFromFile(h.CertPath),
+						ssh.Password(h.Password)
 					},
 					HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 					Timeout:         10 * time.Second,
