@@ -13,6 +13,8 @@ var (
 	port int
 	tags []string
 	group string
+	password string
+	certPath string
 )
 
 var addCmd = &cobra.Command{
