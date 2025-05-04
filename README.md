@@ -18,45 +18,56 @@ go mod tidy
 
 ## 🚀 Comandos
 
-### Adiciona uma nova conexão SSH.
+### `add` - Adicionar uma nova conexão SSH
 
 ```bash
 sshm add --alias <alias> --host <host> --user <user> --port <port> --tags <tags> --group <group> --password <password>
 ```
 
-- --alias: Nome da conexão.
-- --host: IP ou domínio do servidor SSH.
-- --user: Usuário SSH.
-- --port: Porta do servidor SSH.
-- --tags: Tags associadas à conexão.
-- --group: Grupo ao qual a conexão pertence.
-- --password: Senha da conexão.
+Parâmetros:
+- `--alias`: Nome da conexão
+- `--host`: IP ou domínio do servidor SSH
+- `--user`: Usuário SSH
+- `--port`: Porta do servidor SSH
+- `--tags`: Tags associadas à conexão
+- `--group`: Grupo ao qual a conexão pertence
+- `--password`: Senha da conexão
 
-### Edita uma conexão SSH existente.
+### `edit` - Editar uma conexão SSH existente
 
 ```bash
 sshm edit --alias <alias> [--host <host>] [--user <user>] [--port <port>] [--tags <tags>] [--group <group>] [--password <password>]
 ```
 
-- --alias: Nome da conexão.
-- --host, --user, --port, --tags, --group, --password: Campos opcionais
+Parâmetros:
+- `--alias`: Nome da conexão
+- `--host`, `--user`, `--port`, `--tags`, `--group`, `--password`: Campos opcionais para atualização
 
-### Exclui uma conexão SSH pelo alias.
+### `delete` - Excluir uma conexão SSH
 
 ```bash
 sshm delete --alias <alias>
 ```
 
-- --alias: Nome da conexão.
+Parâmetros:
+- `--alias`: Nome da conexão a ser excluída
 
-### Define uma senha global para conexões SSH.
+### `set-password` - Definir senha global
 
 ```bash
 sshm set-password
 ```
 
-### Lista todas as conexões SSH.
+Define uma senha global para conexões SSH que não possuem senha própria.
+
+### `list` - Listar todas as conexões SSH
 
 ```bash
 sshm list
 ```
+
+Exibe todas as conexões SSH cadastradas no sistema.
+
+## 📄 Licença
+
+Este projeto está licenciado sob a licença MIT.
