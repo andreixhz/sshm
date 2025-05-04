@@ -8,4 +8,5 @@ type Host struct {
 	Tags  []string `json:"tags"`
 	Group string   `json:"group"`
 	Password string `json:"password"`
+	CertPath string `json:"certPath"`
 }

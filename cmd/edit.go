@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/andreixhz/sshm/internal"
 	"github.com/spf13/cobra"
-	
+
 )
 
 var (
@@ -15,6 +15,7 @@ var (
 	edTags   []string
 	edGroup  string
 	edPasswd string
+	edCertPath string
 )
 
 var editCmd = &cobra.Command{
@@ -42,6 +43,9 @@ var editCmd = &cobra.Command{
 				if edPasswd != "" {
 					h.Password = edPasswd
 				}
+				if edCertPath != "" {
+					h.CertPath = edCertPath
+				}
 				hosts[i] = h
 				return internal.SaveHosts(hosts)
 			}
@@ -58,6 +62,7 @@ func init() {
 	editCmd.Flags().StringSliceVar(&edTags, "tags", []string{}, "Novas tags")
 	editCmd.Flags().StringVar(&edGroup, "group", "", "Novo grupo")
 	editCmd.Flags().StringVar(&edPasswd, "password", "", "Nova senha")
+	editCmd.Flags().StringVar(&edCertPath, "certPath", "", "Caminho do certificado")
 	editCmd.MarkFlagRequired("alias")
 	rootCmd.AddCommand(editCmd)
 }

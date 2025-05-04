@@ -27,6 +27,8 @@ var addCmd = &cobra.Command{
 			Port:  port,
 			Tags:  tags,
 			Group: group,
+			Password: password,
+			CertPath: certPath,
 		})
 		return internal.SaveHosts(hosts)
 	},
@@ -39,6 +41,8 @@ func init() {
 	addCmd.Flags().IntVar(&port, "port", 22, "Porta SSH")
 	addCmd.Flags().StringSliceVar(&tags, "tags", []string{}, "Lista de tags")
 	addCmd.Flags().StringVar(&group, "group", "", "Grupo")
+	addCmd.Flags().StringVar(&certPath, "certPath", "", "Caminho do certificado")
+	addCmd.Flags().StringVar(&password, "password", "", "Senha")
 	addCmd.MarkFlagRequired("alias")
 	addCmd.MarkFlagRequired("host")
 	addCmd.MarkFlagRequired("user")
